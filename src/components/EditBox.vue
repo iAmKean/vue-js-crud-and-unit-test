@@ -13,8 +13,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import axios from 'axios';
 export default {
   name: 'EditBox',
   components: {},
@@ -40,9 +38,7 @@ export default {
           }
         };
 
-        let url = 'http://localhost/crud-agile-server/services/AgileService.php';
-
-        axios.post(url, params)
+        this.http.post(this.api.AgileService, params)
           .then((res) => {
               this.CloseAdd();
               this.$emit('refresh');

@@ -54,7 +54,6 @@
 
 <script>
 // @ is an alias to /src
-import axios from 'axios';
 import AddBox from '@/components/AddBox.vue';
 import EditBox from '@/components/EditBox.vue';
 import DeleteBox from '@/components/DeleteBox.vue';
@@ -89,8 +88,7 @@ export default {
         data: {}
       };
 
-      let url = 'http://localhost/crud-agile-server/services/AgileService.php';
-      axios.post(url, params)
+      this.http.post(this.api.AgileService, params)
         .then((res) => {
           this.itemList = res.data;
         })
