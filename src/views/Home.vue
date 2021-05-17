@@ -2,7 +2,7 @@
   <div class="home">
     <div class="item-wrapper">
       <h1>Agile Software Development</h1>
-      <h2>Core and Principles</h2>
+      <h2>Values and Principles</h2>
       <hr>
       <div v-if="itemList.length > 0" class="item-list">
         <ul>
@@ -116,6 +116,16 @@ export default {
   line-height: 50px;
   font-size: 14px;
   padding: 0px 110px 0px 110px;
+  position: relative;
+}
+
+.item-list ul li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 110px);
+  height: 1px;
+  background: #ccc;
 }
 
 .item-list ul li:not(:last-child) {
